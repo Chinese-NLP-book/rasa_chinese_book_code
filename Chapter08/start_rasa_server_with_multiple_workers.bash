@@ -1,0 +1,1 @@
+SANIC_WORKERS=5 rasa run

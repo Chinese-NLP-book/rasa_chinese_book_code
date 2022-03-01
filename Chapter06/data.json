@@ -1,0 +1,58 @@
+{
+    "song": [
+        {
+            "id": 0,
+            "name": "晴天",
+            "singer": "周杰伦",
+            "album": "叶惠美",
+            "style": "流行,英伦摇滚"
+        },
+        {
+            "id": 1,
+            "name": "江南",
+            "singer": "林俊杰",
+            "album": "第二天堂",
+            "style": "流行,中国风"
+        },
+        {
+            "id": 2,
+            "name": "舞娘",
+            "singer": "蔡依林",
+            "album": "舞娘",
+            "style": "流行"
+        },
+        {
+            "id": 3,
+            "name": "后来",
+            "singer": "刘若英",
+            "album": "我等你",
+            "style": "流行,抒情,经典"
+        }
+    ],
+    "singer": [
+        {
+            "id": 0,
+            "name": "周杰伦",
+            "gender": "male",
+            "birthday": "1979/01/18"
+        },
+        {
+            "id": 1,
+            "name": "林俊杰",
+            "gender": "male",
+            "birthday": "1979/03/27"
+        },
+        {
+            "id": 2,
+            "name": "蔡依林",
+            "gender": "female",
+            "birthday": "1980/09/15"
+        },
+        {
+            "id": 3,
+            "name": "刘若英",
+            "gender": "female",
+            "birthday": "1969/06/01"
+        }
+    ]
+}

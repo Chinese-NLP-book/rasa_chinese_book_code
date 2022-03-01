@@ -1,0 +1,83 @@
+version: "3.0"
+nlu:
+  - intent: goodbye
+    examples: |
+      - 拜拜
+      - 再见
+      - 拜
+      - 退出
+      - 结束
+  - intent: greet
+    examples: |
+      - 你好
+      - 您好
+      - Hello
+      - hello
+      - Hi
+      - hi
+      - 喂
+      - 在么
+  - intent: affirm
+    examples: |
+      - 好
+      - 没问题
+      - 行
+      - OK
+      - 可以
+      - 是
+      - 是的
+  - intent: deny
+    examples: |
+      - 不要
+      - 不用
+      - 不需要
+      - 不
+      - NO
+      - 别
+  - intent: info_date
+    examples: |
+      - [明天](date)
+      - [今天](date)
+      - [晚上](date)
+      - [下午](date)
+  - intent: info_city
+    examples: |
+      - [上海](city)吧
+      - [上海](city)
+      - [北京](city)
+      - [南京](city)
+  - intent: book_ticket
+    examples: |
+      - 帮我定车票
+      - 帮我定一张车票
+      - 帮我定一张从[上海]{"entity": "city", "role": "departure"}出发的车票
+      - 帮我定一张从[上海]{"entity": "city", "role": "departure"}走的车票
+      - 帮我定一张从[上海]{"entity": "city", "role": "departure"}走的票
+      - 帮我定一张[上海]{"entity": "city", "role": "departure"}到[北京]{"entity": "city", "role": "destination"}的车票
+      - 帮我定一张[明天](date)[上海]{"entity": "city", "role": "departure"}到[北京]{"entity": "city", "role": "destination"}的车票
+      - 帮我定一张[明天](date)[上海]{"entity": "city", "role": "departure"}去[北京]{"entity": "city", "role": "destination"}的车票
+      - 帮我定一张[明天](date)的车票
+      - 帮我定一张去[北京]{"entity": "city", "role": "destination"}的车票
+      - 帮我定张去[北京]{"entity": "city", "role": "destination"}的车票
+      - 帮我定张从[上海]{"entity": "city", "role": "departure"}出发的车票
+      - 帮我定张到[北京]{"entity": "city", "role": "destination"}的车票
+  - synonym: 下个星期一
+    examples: |
+      - 下星期一
+  - synonym: 今天
+    examples: |
+      - 早上
+      - 中午
+      - 晚上
+      - 下午
+      - 傍晚
+      - 今日
+  - synonym: 明天
+    examples: |
+      - 明日
+  - synonym: 北京
+    examples: |
+      - 首都
+  - synonym: 上海
+    examples: |
+      - 魔都

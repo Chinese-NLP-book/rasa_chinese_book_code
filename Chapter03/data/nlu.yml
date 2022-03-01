@@ -1,0 +1,41 @@
+version: "3.0"
+nlu:
+  - intent: greet
+    examples: |
+      - 你好
+      - 您好
+      - hello
+      - hi
+      - 喂
+      - 在么
+  - intent: goodbye
+    examples: |
+      - 拜拜
+      - 再见
+      - 拜
+      - 退出
+      - 结束
+  - intent: query_time
+    examples: |
+      - 现在几点了
+      - 什么时候了
+      - 几点了
+      - 现在什么时候了
+      - 现在的时间
+  - intent: query_date
+    examples: |
+      - [今天](date)几号
+      - [今天](date)是几号
+      - [昨天](date)几号
+      - [明天](date)几号
+      - [今天](date)的日期
+      - [今天](date)几号了
+      - [明天](date)的日期
+      - 几号
+  - intent: query_weekday
+    examples: |
+      - [今天](date)星期几
+      - [明天](date)星期几
+      - [昨天](date)星期几
+      - [今天](date)是星期几
+      - 星期几

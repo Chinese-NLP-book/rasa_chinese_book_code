@@ -1,0 +1,6 @@
+version: "3.0"
+responses:
+  utter_chitchat/whoyouare:
+    - text: 你好，我是Silly，一个专注天气预报的对话机器人。
+  utter_chitchat/whatyoucando:
+    - text: 我能帮你查找中国大陆地区城市级别的当下和未来两天的天气情况。

@@ -1,0 +1,6 @@
+version: "3.0"
+rules:
+  - rule: 处理NLU低置信度时的规则
+    steps:
+      - intent: nlu_fallback
+      - action: action_default_fallback

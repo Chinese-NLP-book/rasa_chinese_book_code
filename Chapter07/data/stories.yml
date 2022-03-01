@@ -1,0 +1,42 @@
+version: "3.0"
+stories:
+  - story: greet
+    steps:
+      - intent: greet
+      - action: utter_greet
+  - story: say goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+  - story: form
+    steps:
+      - intent: book_ticket
+      - action: ticket_form
+      - active_loop: ticket_form
+      - active_loop: null
+      - intent: deny
+      - action: utter_ask_confirm_then_no
+  - story: form with address
+    steps:
+      - intent: book_ticket
+      - action: ticket_form
+      - active_loop: ticket_form
+      - active_loop: null
+      - intent: affirm
+      - action: utter_ask_confirm_then_yes
+      - action: action_buy_ticket
+      - slot_was_set:
+          - api_succeed: true
+      - action: utter_api_succeed_true
+  - story: form with address
+    steps:
+      - intent: book_ticket
+      - action: ticket_form
+      - active_loop: ticket_form
+      - active_loop: null
+      - intent: affirm
+      - action: utter_ask_confirm_then_yes
+      - action: action_buy_ticket
+      - slot_was_set:
+          - api_succeed: false
+      - action: utter_api_succeed_false

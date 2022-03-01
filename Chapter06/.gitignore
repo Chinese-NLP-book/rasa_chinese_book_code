@@ -1,0 +1,17 @@
+# for Dev
+*.db
+*.db-shm
+*.db-wal
+*.log
+intent_errors.json
+models/*.tar.gz
+bin_data/total_word_feature_extractor.dat
+*.tar.gz
+results/
+
+# for IDE
+.idea
+
+# for python
+__pycache__/*
+.rasa

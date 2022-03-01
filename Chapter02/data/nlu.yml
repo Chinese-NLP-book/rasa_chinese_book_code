@@ -1,0 +1,38 @@
+version: "3.0"
+nlu:
+  - intent: greet
+    examples: |
+      - 你好
+      - hello
+      - hi
+      - 喂
+      - 在么
+  - intent: goodbye
+    examples: |
+      - 拜拜
+      - 再见
+      - 拜
+      - 退出
+      - 结束
+  - intent: medicine
+    examples: |
+      - [感冒](disease)了该吃什么药
+      - 我[便秘](disease)了，该吃什么药
+      - 我[胃痛](disease)，该吃什么药
+      - 一直[打喷嚏](disease)吃什么药好
+      - 父母都有[高血压](disease)，我应该推荐他们吃什么药好呢
+      - 头上烫烫的，感觉[发烧](disease)了，该吃什么药好
+      - [减肥](disease)有什么好的药品推荐吗？
+  - intent: medical_department
+    examples: |
+      - [感冒](disease)了该吃去哪个科室看病
+      - 我[便秘](disease)了，该去挂哪个科室的号
+      - 我[胃痛](disease)，该去医院看哪个门诊啊
+      - 一直[打喷嚏](disease)挂哪一个科室的号啊
+      - [头疼](disease)该挂哪科
+  - intent: medical_hospital
+    examples: |
+      - 我生病了，不知道去哪里看病
+      - [减肥](disease)有什么好的医院或者健康中心推荐吗？
+      - 想做个[体检](disease)，有哪家医院或者哪里的诊所或者健康中心比较实惠啊？
+      - 父母都有[高血压](disease)，我应该推荐他们去哪家医院好呢

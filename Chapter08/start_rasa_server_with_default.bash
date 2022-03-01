@@ -1,0 +1,1 @@
+rasa run --endpoints ./endpoints_default.yml

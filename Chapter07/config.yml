@@ -1,0 +1,17 @@
+recipe: default.v1
+language: zh
+pipeline:
+  - name: JiebaTokenizer
+  - name: LanguageModelFeaturizer
+    model_name: bert
+    model_weights: bert-base-chinese
+  - name: RegexFeaturizer
+  - name: DIETClassifier
+    epochs: 2000
+    tensorboard_log_directory: ./log
+  - name: ResponseSelector
+  - name: EntitySynonymMapper
+policies:
+  - name: MemoizationPolicy
+  - name: TEDPolicy
+  - name: RulePolicy

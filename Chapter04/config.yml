@@ -1,0 +1,18 @@
+recipe: default.v1
+language: "zh"
+
+pipeline:
+  - name: JiebaTokenizer
+  - name: LanguageModelFeaturizer
+    model_name: "bert"
+    model_weights: "bert-base-chinese"
+  - name: "DIETClassifier"
+    epochs: 100
+    tensorboard_log_directory: ./log
+    learning_rate: 0.001
+  - name: "ResponseSelector"
+
+policies:
+  - name: MemoizationPolicy
+  - name: TEDPolicy
+  - name: RulePolicy

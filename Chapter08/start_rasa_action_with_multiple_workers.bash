@@ -1,0 +1,1 @@
+ACTION_SERVER_SANIC_WORKERS=5 rasa run actions

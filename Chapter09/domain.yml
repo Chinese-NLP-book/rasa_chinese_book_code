@@ -1,0 +1,57 @@
+version: "3.0"
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+  - goodbye
+  - greet
+  - weather
+  - chitchat
+  - deny
+  - stop
+  - affirm
+  - info_date
+  - info_address
+entities:
+  - address
+  - date-time
+slots:
+  address:
+    type: text
+    influence_conversation: false
+    mappings:
+      - entity: address
+        type: from_entity
+  date-time:
+    type: text
+    influence_conversation: false
+    mappings:
+      - entity: date-time
+        type: from_entity
+responses:
+  utter_greet:
+    - text: 你好，请说出需要提供天气预测服务的地点和时间
+  utter_goodbye:
+    - text: 再见！
+  utter_ask_address:
+    - text: 哪里呢？
+  utter_ask_date-time:
+    - text: 什么时候？
+  utter_ask_continue:
+    - text: 是否要继续？
+  utter_default:
+    - text: 系统不明白您说的话
+actions:
+  - utter_ask_address
+  - utter_ask_date-time
+  - utter_goodbye
+  - utter_greet
+  - utter_ask_continue
+  - utter_default
+  - respond_chitchat
+  - action_weather_form_submit
+forms:
+  weather_form:
+    required_slots:
+      - address
+      - date-time

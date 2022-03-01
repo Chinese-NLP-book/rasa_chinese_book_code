@@ -1,0 +1,30 @@
+version: "3.0"
+responses:
+  utter_faq/notes:
+    - text: 1、登在校园招聘板块内的职位信息才适用于应届毕业生招聘，请所有的应届毕业生去校园招聘的版块寻找您感兴趣的职位。2、列出的每个职位的要求是该职位的最低要求，为了保证您应聘的成功率，希望您严格按照职位的要求考虑您的选择。3、提交成功后，在招聘结束前，您将不能修改或再次提交简历，因此，请于仔细确认填写信息后提交简历。
+  utter_faq/work_location:
+    - text: 招聘信息中包含各职位的工作地点内容，请参考各职位内容的详细介绍。
+  utter_faq/max_job_request:
+    - text: 对于校园招聘，最多申请2个职位。
+  utter_faq/audit:
+    - text: 1、简历审核：应聘者需要通过ACME网站，填写并提交个人简历，ACME的招聘专员将对收取的简历进行认真的审查和筛选。了解应聘者的情况，并筛选出符合职位要求的简历，同时确认简历记载内容是否属实。2、笔试审核：ACME技术类测试主要针对应聘者的专业技能进行检查和评价。3、面试审核：经过实施评价应聘者基本素质的第一阶段面试和评价专业知识的第二阶段面试，对应聘者是否符合ACME人才理念以及应聘者的工作能力做出客观的综合评价，从而决定是否录用该应聘者。
+  utter_faq/write_exam_participate:
+    - text: 通过简历审核的应聘者，我们将采用短信、e-mail、ACME公告栏以及电话通知的方式告知您
+  utter_faq/write_exam_location:
+    - text: 笔试地点将根据您在简历中填写的学校所在城市进行统筹安排
+  utter_faq/write_exam_again:
+    - text: 校园招聘的大规模的笔试仅安排一次，请收到笔试通知的同学认真对待笔试机会。
+  utter_faq/write_exam_with-out-offer:
+    - text: 由于我们是按照严格的招聘流程筛选出的笔试名单，所以非常抱歉，对于没有收到笔试通知的同学，就不能参加本次校园招聘的笔试。
+  utter_faq/interview_arrangement:
+    - text: 不同的职位面试进度安排不同，除特殊安排外，笔试结束一周左右会安排面试。
+  utter_faq/interview_times:
+    - text: 一般情况下，业务部门和人力资源部会同时或者分别安排一次面试。个别特殊职位需要2次及以上的面试。
+  utter_faq/interview_from:
+    - text: 面试一般以单独面试的形式进行，但根据各公司的面试安排，也会进行小组面试。
+  utter_faq/interview_clothing:
+    - text: 面试着装没有统一要求，但建议您尽量穿着较为正式的职业装参加。
+  utter_faq/interview_paperwork:
+    - text: 面试时，请您携带可以证明您身份的有效证件，有特殊要求的职位请携带好能证明您专业水平的证书原件以及复印件。
+  utter_faq/interview_result:
+    - text: 我们会通过邮件或电话的形式，通知您面试结果。

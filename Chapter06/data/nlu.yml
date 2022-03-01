@@ -1,0 +1,114 @@
+version: "3.0"
+nlu:
+  - intent: goodbye
+    examples: |
+      - 拜拜
+      - 再见
+      - 拜
+      - 退出
+      - 结束
+  - intent: greet
+    examples: |
+      - 你好
+      - 您好
+      - Hello
+      - hello
+      - Hi
+      - hi
+      - 喂
+      - 在么
+  - intent: query_knowledge_base
+    examples: |
+      - 有什么好听的[歌曲](object_type)？
+      - 有什么唱歌好听的[歌手](object_type)？
+      - 给我列一些[歌曲](object_type)
+      - 给我列一些[歌手](object_type)
+      - 给我列一些[男](gender)[歌手](object_type)
+      - 给我列一些[男](gender)的[歌手](object_type)
+      - 给我列一些[女](gender)[歌手](object_type)
+      - 给我列一些[女](gender)的[歌手](object_type)
+      - 给我列一些[男性](gender)[歌手](object_type)
+      - 给我列一些[女性](gender)[歌手](object_type)
+      - 给我[男性](gender)[歌手](object_type)
+      - 给我[女性](gender)[歌手](object_type)
+      - 给我列出一些[周杰伦](singer)的[歌曲](object_type)
+      - 给我列出[周杰伦](singer)的[歌曲](object_type)
+      - 给我列出[周杰伦](singer)唱的[歌曲](object_type)
+      - 列出[周杰伦](singer)的[歌曲](object_type)
+      - 给我列[周杰伦](singer)的[歌曲](object_type)
+      - [林俊杰](singer)都有什么[歌曲](object_type)
+      - [林俊杰](singer)有什么[歌曲](object_type)
+      - [刚才那首](mention)属于什么[专辑](attribute)
+      - [刚才那首](mention)是[谁](attribute)唱的
+      - [刚才那首](mention)的[歌手](attribute)是谁
+      - [那首歌](mention)属于什么[风格](attribute)？
+      - [最后一个](mention)属于什么[风格](attribute)？
+      - [第一个](mention)属于什么[专辑](attribute)？
+      - [第一个](mention)的[专辑](attribute)
+      - [第一个](mention)是[谁](attribute)唱的？
+      - [最后一个](mention)是[哪个](attribute)唱的？
+      - [舞娘](song)是[哪个歌手](attribute)唱的？
+      - [晴天](song)这首歌属于什么[专辑](attribute)？
+      - [晴天](song)的[专辑](attribute)？
+      - [江南](song)属于什么[专辑](attribute)？
+      - [江南](song)在什么[专辑](attribute)里面？
+      - [第一个](mention)人的[生日](attribute)
+      - [周杰伦](singer)的[生日](attribute)
+  - intent: play_song
+    examples: |
+      - 播放这首歌
+      - 播这首歌
+  - intent: play_album
+    examples: |
+      - 播放这个专辑
+      - 播这个专辑
+  - synonym: "1"
+    examples: |
+      - 第一个
+      - 首个
+      - 第一首
+  - synonym: "2"
+    examples: |
+      - 第二个
+      - 第二首
+  - synonym: "3"
+    examples: |
+      - 第三个
+      - 第三首
+  - synonym: LAST
+    examples: |
+      - 最后一个
+      - 最后那个
+      - 最后的
+  - synonym: birthday
+    examples: |
+      - 生日
+  - synonym: song
+    examples: |
+      - 歌曲
+  - synonym: singer
+    examples: |
+      - 歌手
+      - 谁
+      - 哪个
+      - 哪个歌手
+  - synonym: album
+    examples: |
+      - 专辑
+  - synonym: "4"
+    examples: |
+      - 第四个
+      - 第四首
+  - synonym: style
+    examples: |
+      - 风格
+      - 类型
+      - 流派
+  - synonym: male
+    examples: |
+      - 男
+      - 男性
+  - synonym: famale
+    examples: |
+      - 女
+      - 女性

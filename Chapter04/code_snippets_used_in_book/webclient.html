@@ -1,0 +1,25 @@
+<script>!(function () {
+    let e = document.createElement("script"),
+      t = document.head || document.getElementsByTagName("head")[0];
+    (e.src = "webchat.js"),
+      (e.async = !0),
+      (e.onload = () => {
+        window.WebChat.default(
+          {
+            selector: "#webchat",
+            initPayload: "你好",
+            interval: 1000, // 1000 ms between each message
+            customData: { "language": "en", "userId": "123" },
+            socketUrl: "http://127.0.0.1:5005",
+            socketPath: "/socket.io/",
+            title: "FAQ查询机器人",
+            subtitle: "演示",
+            showCloseButton: true,
+            fullScreenMode: false
+          },
+          null
+        );
+      }),
+      t.insertBefore(e, t.firstChild);
+  })();
+</script>

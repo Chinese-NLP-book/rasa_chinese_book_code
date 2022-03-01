@@ -1,0 +1,6 @@
+events.db*
+rasa.db
+models/
+log/
+__pycache__/*
+.rasa

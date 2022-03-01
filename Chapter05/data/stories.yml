@@ -1,0 +1,35 @@
+version: "3.0"
+stories:
+  - story: greet
+    steps:
+      - intent: greet
+      - action: utter_greet
+  - story: say goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+  - story: chitchat
+    steps:
+      - intent: chitchat
+      - action: respond_chitchat
+  - story: form with stop then deny
+    steps:
+      - or:
+          - intent: weather
+          - intent: weather
+            entities:
+              - address: 上海
+          - intent: weather
+            entities:
+              - date-time: 明天
+          - intent: weather
+            entities:
+              - date-time: 明天
+              - address: 上海
+      - action: weather_form
+      - active_loop: weather_form
+      - intent: stop
+      - action: utter_ask_continue
+      - intent: deny
+      - action: action_deactivate_loop
+      - active_loop: null

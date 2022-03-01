@@ -1,0 +1,5 @@
+# fix Rasa version to 3.X
+rasa[transformers,jieba]>3.0,<4.0
+pytest
+MicroTokenizer
+neo4j~=4.1

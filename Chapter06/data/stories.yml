@@ -1,0 +1,16 @@
+version: "3.0"
+stories:
+  - story: greet
+    steps:
+      - intent: greet
+      - action: utter_greet
+  - story: knowledge query
+    steps:
+      - intent: query_knowledge_base
+      - action: action_response_query
+      - intent: query_knowledge_base
+      - action: action_response_query
+  - story: say goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye

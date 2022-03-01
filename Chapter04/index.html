@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo for weather forecast query bot</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="showdown.min.js"></script>
+
+    <!-- markdown style -->
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+    <!-- /markdown style -->
+</head>
+
+<body>
+    <textarea id="markdown-source" style="visibility: hidden;">
+    *这是FAQ机器人的演示。*
+
+    *点击页面右下角的小部件开始与机器人对话。*
+    </textarea>
+    <article id="markdown-rendered" class="markdown-body" />
+    <script>
+        function run() {
+            var text = document.getElementById('markdown-source').value,
+                target = document.getElementById('markdown-rendered'),
+                converter = new showdown.Converter(),
+                html = converter.makeHtml(text);
+
+            target.innerHTML = html;
+        };
+
+        run();
+    </script>
+    <script>!(function () {
+            let e = document.createElement("script"),
+                t = document.head || document.getElementsByTagName("head")[0];
+            (e.src = "webchat.js"),
+                (e.async = !0),
+                (e.onload = () => {
+                    window.WebChat.default(
+                        {
+                            selector: "#webchat",
+                            initPayload: "你好",
+                            interval: 1000, // 1000 ms between each message
+                            customData: { "language": "en", "userId": "123" },
+                            socketUrl: "http://127.0.0.1:5005",
+                            socketPath: "/socket.io/",
+                            title: "FAQ查询机器人",
+                            subtitle: "演示",
+                            showCloseButton: true,
+                            fullScreenMode: false
+                        },
+                        null
+                    );
+                }),
+                t.insertBefore(e, t.firstChild);
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+from typing import Any, Text, Dict, List
+
+from rasa_sdk import Tracker, Action
+from rasa_sdk.events import SlotSet
+from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.forms import FormAction
+
+from service.weather import get_text_weather_date
+from service.normalization import text_to_date
+
+
+class WeatherFormAction(FormAction):
+    def name(self) -> Text:
+        return "weather_form"
+
+    def required_slots(self, tracker: Tracker) -> List[Text]:
+        return ["address", "date-time"]
+
+    def submit(
+        self, dispatch: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
+    ) -> List[Dict]:
+        city = tracker.get_slot("address")
+        date_text = tracker.get_slot("date-time")
+
+        date_object = text_to_date(date_text)
+
+        if not date_object:  # parse date_time failed
+            msg = "暂不支持查询 {} 的天气".format([city, date_text])
+            dispatch.utter_message(msg)
+        else:
+            dispatch.utter_message(templete="utter_working_on_it")
+            try:
+                weather_data = get_text_weather_date(city, date_object, date_text)
+            except Exception as e:
+                exec_msg = str(e)
+                dispatch.utter_message(exec_msg)
+            else:
+                dispatch.utter_message(weather_data)
+
+        return []

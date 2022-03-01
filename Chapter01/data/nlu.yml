@@ -1,0 +1,17 @@
+version: "3.0"
+nlu:
+  - intent: greet
+    examples: |
+      - 你好
+      - 早上好
+  - intent: affirm
+    examples: |
+      - 对的
+      - 确实
+  - intent: restaurant_search
+    examples: |
+      - 找个吃[拉面](food)的店
+      - 这附近哪里有吃[麻辣烫](food)的地方
+  - intent: medical
+    examples: |
+      - 我[胃痛](disease)，该吃什么药？

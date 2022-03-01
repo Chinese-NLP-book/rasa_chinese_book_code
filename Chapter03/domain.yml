@@ -1,0 +1,30 @@
+version: "3.0"
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+  - greet
+  - goodbye
+  - query_time
+  - query_date
+  - query_weekday
+entities:
+  - date
+slots:
+  date:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: date
+responses:
+  utter_greet:
+    - text: 你好，我是 Silly，我可以帮你查询时间、日期和星期几。你可以对我说「现在几点了？」、「今天几号？」或者「明天星期几？」。
+  utter_goodbye:
+    - text: 再见！
+actions:
+  - action_query_time
+  - action_query_date
+  - action_query_weekday
+  - utter_goodbye
+  - utter_greet

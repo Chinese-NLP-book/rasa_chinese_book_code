@@ -1,0 +1,59 @@
+version: "3.0"
+nlu:
+  - intent: goodbye
+    examples: |
+      - 拜拜
+      - 再见
+      - 拜
+      - 退出
+      - 结束
+  - intent: greet
+    examples: |
+      - 你好
+      - 您好
+      - hello
+      - hi
+      - 喂
+      - 在么
+  - intent: faq/notes
+    examples: |
+      - 应聘ACME校园招聘职位的注意事项?
+  - intent: faq/work_location
+    examples: |
+      - 校园招聘录取的应届生主要工作地点在哪里?
+  - intent: faq/max_job_request
+    examples: |
+      - 最多申请几个职位?
+  - intent: faq/audit
+    examples: |
+      - 各阶段审核说明
+  - intent: faq/write_exam_participate
+    examples: |
+      - 怎样参加笔试?
+  - intent: faq/write_exam_location
+    examples: |
+      - 笔试考试地点如何安排?
+  - intent: faq/write_exam_again
+    examples: |
+      - 笔试只安排一次吗?我笔试当天没有参加，是否还有再次笔试的机会?
+  - intent: faq/write_exam_with-out-offer
+    examples: |
+      - 如果我没有收到笔试通知，但我很想进入ACME，能否直接进入考场参加考试?
+  - intent: faq/interview_arrangement
+    examples: |
+      - 面试什么时候开始?会提前多少天通知面试安排?
+  - intent: faq/interview_times
+    examples: |
+      - 一般会安排几次面试?
+  - intent: faq/interview_from
+    examples: |
+      - 面试的形式是怎样的?是单独面试还是小组面试?
+  - intent: faq/interview_clothing
+    examples: |
+      - 对面试的服装有什么具体的要求?
+  - intent: faq/interview_paperwork
+    examples: |
+      - 面试时需要携带什么资料?
+  - intent: faq/interview_result
+    examples: |
+      - 如何查询面试结果?

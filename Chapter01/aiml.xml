@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+  <category>
+    <pattern>*</pattern>
+    <that>你现在在什么地方</that>
+    <template>
+      <think>
+        <set name="where">
+          <formal>
+            <star />
+          </formal>
+        </set>
+      </think>
+      <random>
+        <li>
+          <get name="where" />
+          是个好地方.
+        </li>
+        <li>
+          真希望我也在
+          <get name="where" />
+          , 陪你.
+        </li>
+        <li>
+          我刚刚看了下
+          <get name="where" />
+          的天气哦.
+        </li>
+      </random>
+    </template>
+  </category>
+  <category>
+    <pattern>外面热吗</pattern>
+    <template>
+      你现在在
+      <get name="where" />
+      ,
+      <system>
+        python getweather.py realtime
+        <get name="where" />
+      </system>
+    </template>
+  </category>
+  <category>
+    <pattern>告诉我 * 天气</pattern>
+    <template>
+      <system>
+        python getweather.py realtime
+        <star />
+      </system>
+    </template>
+  </category>
+  <category>
+    <pattern>* 现在天气</pattern>
+    <template>
+      <system>
+        python getweather.py realtime
+        <star />
+      </system>
+    </template>
+  </category>
+</aiml>

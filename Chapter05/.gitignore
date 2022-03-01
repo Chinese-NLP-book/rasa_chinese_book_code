@@ -1,0 +1,20 @@
+# for Dev
+*.db
+*.db-shm
+*.db-wal
+*.log
+*.json
+bin_data/total_word_feature_extractor.dat
+*.dat.tar.gz
+models/*
+
+# for IDE
+.idea
+
+# for python
+**/__pycache__/*
+
+# ignore generated file
+log
+models
+.rasa
