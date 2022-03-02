@@ -34,7 +34,7 @@ All rights reserved. The source code provided by this repository may not be used
 
 ## 致谢 | Acknowledge
 
-* 感谢王胤（前饿了么工程副总裁）、申强（谷歌开发者关系生态中国区负责人）、李佩（满帮集团首席科学家，前阿里巴巴本地生活研究院高级总监）和李卓桓（Wechaty框架的创始人）为本书写作了推荐语。 | Thank you to Alex (former VP of Engineering at ELE.ME), Brian (Head of Google Developer Relations Ecosystem China), Leon (Chief Scientist at Full Truck Alliance, Former Senior Director of Alibaba Local Life Research Institute) and Huan (Founder of Wechaty Framework) for writing testimonials for this book.
+* 感谢王胤（前饿了么工程副总裁）、申强（谷歌开发者关系生态中国区负责人）、李佩（满帮集团首席科学家，前阿里巴巴本地生活研究院高级总监）和李卓桓（Wechaty框架的创始人）为本书写作了推荐语。 | Thank you to Alex (former VP of Engineering at ELE.ME), Brian (Head of Google Developer Relations Ecosystem China), Leo (Chief Scientist at Full Truck Alliance, Former Senior Director of Alibaba Local Life Research Institute) and Huan (Founder of Wechaty Framework) for writing testimonials for this book.
 * 感谢谷歌通过提供谷歌云信用额度（Google Cloud Credits）的方式来支持这项工作 | Google supported this work by providing Google Cloud credit
 
 ## Credits
