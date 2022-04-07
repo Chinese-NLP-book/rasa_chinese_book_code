@@ -23,9 +23,7 @@ nlu:
       - 有什么唱歌好听的[歌手](object_type)？
       - 给我列一些[歌曲](object_type)
       - 给我列一些[歌手](object_type)
-      - 给我列一些[男](gender)[歌手](object_type)
       - 给我列一些[男](gender)的[歌手](object_type)
-      - 给我列一些[女](gender)[歌手](object_type)
       - 给我列一些[女](gender)的[歌手](object_type)
       - 给我列一些[男性](gender)[歌手](object_type)
       - 给我列一些[女性](gender)[歌手](object_type)
@@ -54,24 +52,23 @@ nlu:
       - [江南](song)在什么[专辑](attribute)里面？
       - [第一个](mention)人的[生日](attribute)
       - [周杰伦](singer)的[生日](attribute)
-  - intent: play_song
+
+  - intent: restart_conversation
     examples: |
-      - 播放这首歌
-      - 播这首歌
-  - intent: play_album
-    examples: |
-      - 播放这个专辑
-      - 播这个专辑
-  - synonym: "1"
+      - restart
+      - 重新对话
+      - 重启对话
+
+  - synonym: '1'
     examples: |
       - 第一个
       - 首个
       - 第一首
-  - synonym: "2"
+  - synonym: '2'
     examples: |
       - 第二个
       - 第二首
-  - synonym: "3"
+  - synonym: '3'
     examples: |
       - 第三个
       - 第三首
@@ -95,7 +92,7 @@ nlu:
   - synonym: album
     examples: |
       - 专辑
-  - synonym: "4"
+  - synonym: '4'
     examples: |
       - 第四个
       - 第四首

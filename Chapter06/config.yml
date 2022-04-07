@@ -1,6 +1,5 @@
 recipe: default.v1
 language: zh
-
 pipeline:
   - name: JiebaTokenizer
   - name: LanguageModelFeaturizer
@@ -18,6 +17,8 @@ pipeline:
 policies:
   - name: MemoizationPolicy
   - name: TEDPolicy 
+    max_history: 5
+    epochs: 100
   - name: RulePolicy
     core_fallback_threshold: 0.3
-    core_fallback_action_name: "action_default_fallback"
+    core_fallback_action_name: action_default_fallback

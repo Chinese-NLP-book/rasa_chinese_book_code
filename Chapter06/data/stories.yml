@@ -8,8 +8,10 @@ stories:
     steps:
       - intent: query_knowledge_base
       - action: action_response_query
-      - intent: query_knowledge_base
-      - action: action_response_query
+  - story: restart convesation
+    steps:
+      - intent: restart_conversation
+      - action: action_restart_conversation
   - story: say goodbye
     steps:
       - intent: goodbye

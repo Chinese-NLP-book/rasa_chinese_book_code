@@ -1,22 +1,22 @@
-version: "3.0"
+version: '3.0'
 session_config:
-  session_expiration_time: 60
+  session_expiration_time: 600
   carry_over_slots_to_new_session: true
 intents:
-  - goodbye
   - greet
+  - goodbye
   - query_knowledge_base:
       use_entities: []
-  - play_song
-  - play_album
+#  - play_song
+#  - play_album
+  - restart_conversation
 entities:
-  - object_type
-  - mention
   - attribute
-  - object-type
-  - song
-  - singer
   - gender
+  - mention
+  - object_type
+  - singer
+  - song
 slots:
   attribute:
     type: any
@@ -72,10 +72,11 @@ responses:
   utter_default:
     - text: 系统不明白您说的话
   utter_ask_rephrase:
-    - text: 抱歉系统没能明白您的话，请您重新表述一次
+    - text: 抱歉系统没能明白您的话，请您重新表述一次; 或输入"restart"重启对话
 actions:
   - action_response_query
+  - action_restart_conversation
+  - utter_ask_rephrase
+  - utter_default
   - utter_goodbye
   - utter_greet
-  - utter_default
-  - utter_ask_rephrase
