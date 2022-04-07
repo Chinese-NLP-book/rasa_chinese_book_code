@@ -1,5 +1,8 @@
 # 天气预报机器人
 
+## rasa版本说明
+> rasa>=3.0.2
+
 ## 训练 Rasa 模型
 
 ```shell
@@ -22,7 +25,12 @@ rasa run --cors "*"
 
 ## 启动网页客户端
 
-切换到目录 `web_client` 下，执行：
+切换到目录 `web_client` 下，
+```base
+cd web_client
+```
+
+然后执行：
 
 ```bash
 python -m http.server

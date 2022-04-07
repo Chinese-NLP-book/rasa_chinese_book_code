@@ -3,7 +3,7 @@ from typing import Any, Dict, List, Text
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.forms import FormAction
+# from rasa_sdk.forms import FormAction // 库中无该方法，脚本也未用到，注释掉
 
 from service.normalization import text_to_date
 from service.weather import get_text_weather_date
