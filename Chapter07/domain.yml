@@ -1,16 +1,18 @@
 version: "3.0"
 
 session_config:
-  session_expiration_time: 0
+  session_expiration_time: 1
   carry_over_slots_to_new_session: true
 intents:
   - greet
   - goodbye
   - affirm
   - deny
-  - book_ticket
+  - book_ticket:
+      use_entities: []
   - info_city
   - info_date
+  - restart_conversation
 entities:
   - city
   - date
@@ -58,17 +60,27 @@ responses:
   utter_ask_date:
     - text: 什么时候出发？
   utter_ask_confirm:
-    - text: 确定要购买{date}从{city_depart}出发到{city_arrive}的车票么？
+    - text: 您要购买{date}从{city_depart}出发到{city_arrive}的车票么？
   utter_ask_confirm_then_no:
-    - text: 好的！
+    - text: 好的！订票取消，欢迎再次光临！
   utter_ask_confirm_then_yes:
-    - text: 好的，正在为您购买车票！
+    - text: 好的，正在为您购买车票！请稍候！
   utter_api_succeed_true:
     - text: 订票成功
   utter_api_succeed_false:
-    - text: 购票 API 出现异常，购买失败，请稍后重试!
+    - text: 订票 API 出现异常，订票失败，请稍后重试！
+  utter_default:
+    - text: 系统不明白您说的话！请重试！
+  utter_ask_rephrase:
+    - text: 抱歉系统没能明白您的话，请您重新表述一次; 或输入"restart"重启对话
 actions:
+  - action_goodbye
   - action_buy_ticket
+  - action_ticket_form_submit
+  - action_restart_conversation
+  - action_ask_confirm_then_no
+  - action_api_succeed_true
+  - action_api_succeed_false
   - utter_greet
   - utter_goodbye
   - utter_ask_confirm

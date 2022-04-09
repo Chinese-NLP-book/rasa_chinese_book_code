@@ -1,3 +1,6 @@
+## rasa版本说明
+> rasa>=3.0.2
+
 ## 训练 Rasa 模型
 
 ```bash
@@ -6,7 +9,7 @@ rasa train
 
 ## 启动Rasa动作服务器
 
-```rasa train
+```bash
 rasa run actions
 ```
 
@@ -16,6 +19,9 @@ rasa run actions
 rasa shell
 ```
 
-尝试输入一些查询，例如“帮我订一张明天从柏林到巴黎的机票”看回复。
+尝试输入一些查询，例如“帮我订一张明天上海到北京的车票”看回复。
 
 玩得开心！
+
+## 如有什么问题,请进入链接社区沟通:
+https://fanbook.mobi/3H6D5FVN

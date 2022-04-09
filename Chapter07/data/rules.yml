@@ -1,0 +1,14 @@
+version: "3.0"
+rules:
+  - rule: greet
+    steps:
+      - intent: greet
+      - action: utter_greet
+  - rule: say goodbye
+    steps:
+      - intent: goodbye
+      - action: action_goodbye
+  - rule: restart convesation
+    steps:
+      - intent: restart_conversation
+      - action: action_restart_conversation
