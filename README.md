@@ -40,3 +40,6 @@ All rights reserved. The source code provided by this repository may not be used
 ## Credits
 
 * 前端项目中的 `index.js` 来自 [Rasa Webchat](https://github.com/botfront/rasa-webchat) 项目，从 https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js 处获得的。 |   The `index.js` in the front-end project is from the [Rasa Webchat](https://github.com/botfront/rasa-webchat) project, which you can get from https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/ lib/index.js.
+
+## 如有什么问题,请进入链接社区沟通:
+https://fanbook.mobi/3H6D5FVN

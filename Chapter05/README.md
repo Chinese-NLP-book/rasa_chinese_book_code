@@ -39,3 +39,6 @@ python -m http.server
 尝试输入一些查询，例如“上海今天的天气如何”并查看响应。
 
 玩得开心！
+
+## 如有什么问题,请进入链接社区沟通:
+https://fanbook.mobi/3H6D5FVN

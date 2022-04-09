@@ -58,3 +58,6 @@ rasa shell
 
 ## 探索Graph
 启动 Neo4j 后，您可以使用 Neo4j 浏览器进行可视化和 GraphQL 调试，访问 http://localhost:7474 ，使用 `neo4j` 作为用户名和密码。
+
+## 如有什么问题,请进入链接社区沟通:
+https://fanbook.mobi/3H6D5FVN
