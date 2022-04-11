@@ -4,7 +4,7 @@ import os
 from typing import Any, Dict, List, Text
 
 from rasa_sdk import Tracker, Action
-from rasa_sdk.events import AllSlotsReset
+from rasa_sdk.events import AllSlotsReset, Restarted
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
 from rasa_sdk.knowledge_base.storage import InMemoryKnowledgeBase
@@ -38,7 +38,6 @@ def return_gbk(s):
         return s
     except UnicodeDecodeError:
         return s
-    return s  # assume it was already utf-8
 
 
 class EnToZh:
@@ -48,8 +47,7 @@ class EnToZh:
 
     def __call__(self, key):
         returnString = self.data.get(key, key)
-        print("EnToZh ==>%s gbk(%s)" % (returnString
-                                        , return_gbk(returnString)))
+        print("EnToZh ==>%s gbk(%s)" % (returnString, return_gbk(returnString)))
         return return_gbk(returnString)
 
 
@@ -152,7 +150,7 @@ class MyKnowledgeBaseAction(ActionQueryKnowledgeBase):
         object_type = tracker.get_slot(SLOT_OBJECT_TYPE)
         last_object_type = tracker.get_slot(SLOT_LAST_OBJECT_TYPE)
         attribute = tracker.get_slot(SLOT_ATTRIBUTE)
-        restartConversation = tracker.get_slot("restartConversation")
+        restartConversation = tracker.get_slot("restart_conversation")
 
         new_request = object_type != last_object_type
         result = []
@@ -194,30 +192,20 @@ class MyKnowledgeBaseAction(ActionQueryKnowledgeBase):
 
         return result
 
-    class RestartConversationAction(Action):
+    class ActionRestartConversation(Action):
         def name(self) -> Text:
             return "action_restart_conversation"
 
         def __init__(self):
             super().__init__()
 
-        async def run(
+        def run(
                 self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
         ) -> List[Dict]:
-
-            result = []
-            print(
-                "\nRestartConversationAction"
-                "---------------------------------------------------------------------------------------------------------")
-
+            print('\n ActionRestartConversation-------------')
             currentSlots = tracker.current_slot_values()
             for slot in currentSlots:
                 print("run slot:\t\t%s=%s" % (slot, currentSlots[slot]))
 
-            restartConversation = tracker.get_slot("restartConversation")
-
-            if restartConversation is not None:
-                print("AllSlotsReset()")
-                return [AllSlotsReset()]
-            return result
-
+            print('Restarted()')
+            return [Restarted()]

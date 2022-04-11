@@ -162,7 +162,7 @@ class ActionApiSucceedFalse(Action):
         print('Restarted()')
         return [Restarted()]
         
-    class RestartConversationAction(Action):
+    class ActionRestartConversation(Action):
         def name(self) -> Text:
             return "action_restart_conversation"
 
@@ -173,7 +173,7 @@ class ActionApiSucceedFalse(Action):
                 self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
         ) -> List[Dict]:
 
-            print('\n RestartConversationAction-------------')
+            print('\n ActionRestartConversation-------------')
             currentSlots = tracker.current_slot_values()
             for slot in currentSlots:
                 print("run slot:\t\t%s=%s" % (slot, currentSlots[slot]))
