@@ -72,7 +72,13 @@ responses:
   utter_default:
     - text: 系统不明白您说的话
   utter_ask_rephrase:
-    - text: 抱歉系统没能明白您的话，请您重新表述一次; 或输入"restart"重启对话
+    - text: 抱歉系统没能明白您的话，请您重新表述一次; 或点击"restart"重启对话
+      buttons:
+        - title: "重新会话"
+          payload: "action_restart_conversation"
+        - title: "清除所有记录"
+          payload: "action_reset_slots"
+
 actions:
   - action_response_query
   - action_restart_conversation

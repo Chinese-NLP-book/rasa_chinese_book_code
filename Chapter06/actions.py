@@ -207,5 +207,26 @@ class MyKnowledgeBaseAction(ActionQueryKnowledgeBase):
             for slot in currentSlots:
                 print("run slot:\t\t%s=%s" % (slot, currentSlots[slot]))
 
+            dispatcher.utter_message(response="utter_greet")
             print('Restarted()')
             return [Restarted()]
+
+    class ActionAllSlotsReset(Action):
+        def name(self) -> Text:
+            return "action_reset_slots"
+
+        def __init__(self):
+            super().__init__()
+
+        def run(
+                self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
+        ) -> List[Dict]:
+            print('\n ActionAllSlotsReset-------------')
+            currentSlots = tracker.current_slot_values()
+            for slot in currentSlots:
+                print("run slot:\t\t%s=%s" % (slot, currentSlots[slot]))
+
+            dispatcher.utter_message(response="utter_greet")
+            print('AllSlotsReset()')
+            return [AllSlotsReset()]
+

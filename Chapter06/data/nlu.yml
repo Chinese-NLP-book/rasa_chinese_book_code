@@ -83,6 +83,7 @@ nlu:
   - synonym: song
     examples: |
       - 歌曲
+      - 歌
   - synonym: singer
     examples: |
       - 歌手
