@@ -1,5 +1,8 @@
 # 使用自定义组件的 Rasa 天气预报机器人
 
+## rasa版本说明
+> rasa>=3.0.2
+
 ## 安装依赖
 
 ```bash
@@ -34,7 +37,10 @@ rasa run --cors "*"
 
 ## 启动网页客户端
 
-切换到目录 `web_client` 下，执行：
+切换到目录 `web_client` 下，
+```base
+cd web_client
+```
 
 ```bash
 python -m http.server
@@ -43,3 +49,6 @@ python -m http.server
 尝试输入一些查询，例如“上海今天的天气如何”并查看响应。
 
 玩得开心！
+
+## 如有什么问题,请进入链接社区沟通:
+https://fanbook.mobi/3H6D5FVN
