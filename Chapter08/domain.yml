@@ -15,14 +15,14 @@ intents:
   - info_address
 entities:
   - address
-  - date-time
+  - date_time
 slots:
   address:
     type: text
     influence_conversation: false
     mappings:
       - type: custom
-  date-time:
+  date_time:
     type: text
     influence_conversation: false
     mappings:
@@ -52,4 +52,4 @@ forms:
   weather_form:
     required_slots:
       - address
-      - date-time
+      - date_time

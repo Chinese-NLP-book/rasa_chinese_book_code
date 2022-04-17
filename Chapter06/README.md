@@ -41,7 +41,7 @@ docker run --rm --env=NEO4J_AUTH=none --publish=7474:7474 --publish=7687:7687 ne
 python ./data_to_neo4j.py
 ```
 
-####使用自定义neo4j知识库启动Rasa动作服务器
+#### 使用自定义neo4j知识库启动Rasa动作服务器
 ```bash
 USE_NEO4J=1 rasa run actions
 ```

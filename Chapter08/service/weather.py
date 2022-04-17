@@ -6,7 +6,7 @@ import json
 from requests import ConnectionError, HTTPError, TooManyRedirects, Timeout
 
 
-KEY = os.getenv("SENIVERSE_KEY", "")  # API key
+KEY = os.getenv("SENIVERSE_KEY", "S72uIAeNAFERHb3Q8")  # API key
 API = "https://api.seniverse.com/v3/weather/daily.json"  # API URL
 UNIT = "c"  # 温度单位
 LANGUAGE = "zh-Hans"  # 查询结果的返回语言
@@ -16,7 +16,7 @@ one_day_timedelta = datetime.timedelta(days=1)
 
 
 def fetch_weather(location: str, start=0, days=15) -> dict:
-    result = requests.get(
+    resultResponse = requests.get(
         API,
         params={
             "key": KEY,
@@ -28,7 +28,7 @@ def fetch_weather(location: str, start=0, days=15) -> dict:
         },
         timeout=2,
     )
-    return result.json()
+    return resultResponse.json()
 
 
 def get_weather_by_date(location: str, date: datetime.date) -> dict:
@@ -39,31 +39,31 @@ def get_weather_by_date(location: str, date: datetime.date) -> dict:
 
 
 def get_weather_by_day(location: str, day=1) -> dict:
-    result = fetch_weather(location)
-    print(result)
+    resultDict = fetch_weather(location)
+    print(resultDict)
     normal_result = {
-        "location": result["results"][0]["location"],
-        "result": result["results"][0]["daily"][day],
+        "location": resultDict["results"][0]["location"],
+        "result": resultDict["results"][0]["daily"][day],
     }
 
     return normal_result
 
 
-def get_text_weather_date(address: str, date_time: str, raw_date_time: str) -> str:
+def get_text_weather_date(address: str, date_time: datetime.date, raw_date_time: str) -> str:
     try:
-        result = get_weather_by_date(address, date_time)
+        resultDict = get_weather_by_date(address, date_time)
     except (ConnectionError, HTTPError, TooManyRedirects, Timeout) as e:
         text_message = "{}".format(e)
     else:
         text_message_tpl = "{} {} ({}) 的天气情况为：白天：{}；夜晚：{}；气温：{}-{} 度"
         text_message = text_message_tpl.format(
-            result["location"]["name"],
+            resultDict["location"]["name"],
             raw_date_time,
-            result["result"]["date"],
-            result["result"]["text_day"],
-            result["result"]["text_night"],
-            result["result"]["high"],
-            result["result"]["low"],
+            resultDict["result"]["date"],
+            resultDict["result"]["text_day"],
+            resultDict["result"]["text_night"],
+            resultDict["result"]["high"],
+            resultDict["result"]["low"],
         )
 
     return text_message
