@@ -17,7 +17,7 @@ class WeatherFormAction(Action):
         self, dispatch: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
     ) -> List[Dict]:
         city = tracker.get_slot("address")
-        date_text = tracker.get_slot("date-time")
+        date_text = tracker.get_slot("date_time")
 
         date_object = text_to_date(date_text)
 

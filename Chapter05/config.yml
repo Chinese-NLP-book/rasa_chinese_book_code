@@ -1,7 +1,7 @@
-recipe: default.v1
+﻿recipe: default.v1
 language: zh
 pipeline:
-  - name: rasa_custom_tokenizer.tokenizer.MicroTokenizer
+  - name: JiebaTokenizer
   - name: LanguageModelFeaturizer
     model_name: bert
     model_weights: bert-base-chinese
