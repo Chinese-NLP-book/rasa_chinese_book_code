@@ -17,6 +17,11 @@ nlu:
       - hi
       - 喂
       - 在么
+  - intent: restart_conversation
+    examples: |
+      - restart
+      - 重新对话
+      - 重启对话
   - intent: affirm
     examples: |
       - 好

@@ -17,10 +17,10 @@ stories:
               - address: 上海
           - intent: weather
             entities:
-              - date-time: 明天
+              - date_time: 明天
           - intent: weather
             entities:
-              - date-time: 明天
+              - date_time: 明天
               - address: 上海
       - action: weather_form
       - active_loop: weather_form
@@ -38,10 +38,10 @@ stories:
               - address: 上海
           - intent: weather
             entities:
-              - date-time: 明天
+              - date_time: 明天
           - intent: weather
             entities:
-              - date-time: 明天
+              - date_time: 明天
               - address: 上海
       - action: weather_form
       - active_loop: weather_form
@@ -58,10 +58,10 @@ stories:
               - address: 上海
           - intent: weather
             entities:
-              - date-time: 明天
+              - date_time: 明天
           - intent: weather
             entities:
-              - date-time: 明天
+              - date_time: 明天
               - address: 上海
       - action: weather_form
       - active_loop: weather_form
@@ -79,10 +79,10 @@ stories:
               - address: 上海
           - intent: weather
             entities:
-              - date-time: 明天
+              - date_time: 明天
           - intent: weather
             entities:
-              - date-time: 明天
+              - date_time: 明天
               - address: 上海
       - action: weather_form
       - active_loop: weather_form

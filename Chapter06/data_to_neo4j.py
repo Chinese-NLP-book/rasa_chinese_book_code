@@ -1,6 +1,6 @@
-import json
+﻿import json
 from neo4j import GraphDatabase
-
+import platform
 
 class MusicDatabase(object):
     def __init__(self, uri, user, password):
@@ -66,8 +66,13 @@ class MusicDatabase(object):
 
 
 if __name__ == "__main__":
-    with open("data.json") as fd:
+
+    fileName = "data.json"
+    if "windows" == platform.system().lower():
+        fileName = "data_gbk.json"
+    with open(fileName) as fd:
         data = json.load(fd)
+
     db = MusicDatabase("bolt://localhost:7687", "neo4j", "neo4j")
 
     def get_singer_data(singer: str, attribute: str) -> str:

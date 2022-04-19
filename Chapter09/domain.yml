@@ -14,7 +14,7 @@ intents:
   - info_address
 entities:
   - address
-  - date-time
+  - date_time
 slots:
   address:
     type: text
@@ -22,11 +22,11 @@ slots:
     mappings:
       - entity: address
         type: from_entity
-  date-time:
+  date_time:
     type: text
     influence_conversation: false
     mappings:
-      - entity: date-time
+      - entity: date_time
         type: from_entity
 responses:
   utter_greet:
@@ -34,24 +34,25 @@ responses:
   utter_goodbye:
     - text: 再见！
   utter_ask_address:
-    - text: 哪里呢？
-  utter_ask_date-time:
-    - text: 什么时候？
+    - text: 想查询哪里的天气呢？
+  utter_ask_date_time:
+    - text: 想查询什么时候的天气呢？
   utter_ask_continue:
     - text: 是否要继续？
   utter_default:
-    - text: 系统不明白您说的话
+    - text: 系统不明白您说的话，请换个说法。
 actions:
   - utter_ask_address
-  - utter_ask_date-time
+  - utter_ask_date_time
   - utter_goodbye
   - utter_greet
   - utter_ask_continue
   - utter_default
-  - respond_chitchat
+  - utter_chitchat
   - action_weather_form_submit
 forms:
   weather_form:
+    ignored_intents: []
     required_slots:
       - address
-      - date-time
+      - date_time

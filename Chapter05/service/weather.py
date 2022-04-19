@@ -6,7 +6,7 @@ import json
 from requests import ConnectionError, HTTPError, TooManyRedirects, Timeout
 
 
-KEY = os.getenv("SENIVERSE_KEY", "")  # API key
+KEY = os.getenv("SENIVERSE_KEY", "S72uIAeNAFERHb3Q8")  # API key
 API = "https://api.seniverse.com/v3/weather/daily.json"  # API URL
 UNIT = "c"  # 温度单位
 LANGUAGE = "zh-Hans"  # 查询结果的返回语言
@@ -49,7 +49,7 @@ def get_weather_by_day(location: str, day=1) -> dict:
     return normal_result
 
 
-def get_text_weather_date(address: str, date_time: str, raw_date_time: str) -> str:
+def get_text_weather_date(address: str, date_time: datetime.date, raw_date_time: str) -> str:
     try:
         result = get_weather_by_date(address, date_time)
     except (ConnectionError, HTTPError, TooManyRedirects, Timeout) as e:

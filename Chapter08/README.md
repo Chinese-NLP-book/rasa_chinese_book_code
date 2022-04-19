@@ -29,7 +29,7 @@ rasa run actions
 ### 运行服务器
 
 ```bash
-SANIC_WORKERS=5 rasa run
+SANIC_WORKERS=5 rasa shell
 ```
 
 ### 运行动作服务器
@@ -41,3 +41,6 @@ ACTION_SERVER_SANIC_WORKERS=5 rasa run actions
 ## JMeter 测试
 
 测试文件是 RasaPerformance.jmx
+
+## 如有什么问题,请进入链接社区沟通:
+https://fanbook.mobi/3H6D5FVN

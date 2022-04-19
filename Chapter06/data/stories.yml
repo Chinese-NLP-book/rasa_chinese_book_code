@@ -8,8 +8,6 @@ stories:
     steps:
       - intent: query_knowledge_base
       - action: action_response_query
-      - intent: query_knowledge_base
-      - action: action_response_query
   - story: say goodbye
     steps:
       - intent: goodbye

@@ -3,7 +3,6 @@ from typing import Any, Dict, List, Text
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.forms import FormAction
 
 from service.normalization import text_to_date
 from service.weather import get_text_weather_date
@@ -17,7 +16,7 @@ class WeatherFormAction(Action):
         self, dispatch: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
     ) -> List[Dict]:
         city = tracker.get_slot("address")
-        date_text = tracker.get_slot("date-time")
+        date_text = tracker.get_slot("date_time")
 
         date_object = text_to_date(date_text)
 
