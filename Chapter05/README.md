@@ -36,6 +36,11 @@ cd web_client
 python -m http.server
 ```
 
+在网页浏览器中输入
+```bash
+http://localhost:8000/
+```
+
 尝试输入一些查询，例如“上海今天的天气如何”并查看响应。
 
 玩得开心！
