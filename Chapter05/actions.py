@@ -23,7 +23,6 @@ class WeatherFormAction(Action):
             msg = "暂不支持查询 {} 的天气".format([city, date_text])
             dispatch.utter_message(msg)
         else:
-            dispatch.utter_message(templete="utter_working_on_it")
             try:
                 weather_data = get_text_weather_date(city, date_object, date_text)
             except Exception as e:
