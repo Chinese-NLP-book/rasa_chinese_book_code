@@ -1,0 +1,19 @@
+version: "3.0"
+rules:
+  - rule: 处理查询
+    steps:
+      - intent: book_ticket
+      - action: ticket_form
+      - active_loop: ticket_form
+  - rule: Submit form
+    condition:
+    # Condition that form is active.
+    - active_loop: ticket_form
+    steps:
+    # Form is deactivated
+    - action: ticket_form
+    - active_loop: null
+    - slot_was_set:
+      - requested_slot: null
+    # The actions we want to run when the form is submitted.
+    - action: action_buy_ticket

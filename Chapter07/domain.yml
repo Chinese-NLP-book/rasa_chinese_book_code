@@ -15,11 +15,6 @@ entities:
   - city
   - date
 slots:
-  api_succeed:
-    type: bool
-    influence_conversation: true
-    mappings:
-      - type: custom
   city_arrive:
     type: text
     influence_conversation: false
@@ -57,25 +52,10 @@ responses:
     - text: 到哪里去呢？
   utter_ask_date:
     - text: 什么时候出发？
-  utter_ask_confirm:
-    - text: 确定要购买{date}从{city_depart}出发到{city_arrive}的车票么？
-  utter_ask_confirm_then_no:
-    - text: 好的！
-  utter_ask_confirm_then_yes:
-    - text: 好的，正在为您购买车票！
-  utter_api_succeed_true:
-    - text: 订票成功
-  utter_api_succeed_false:
-    - text: 购票 API 出现异常，购买失败，请稍后重试!
 actions:
   - action_buy_ticket
   - utter_greet
   - utter_goodbye
-  - utter_ask_confirm
-  - utter_ask_confirm_then_no
-  - utter_ask_confirm_then_yes
-  - utter_api_succeed_true
-  - utter_api_succeed_false
 forms:
   ticket_form:
     required_slots:

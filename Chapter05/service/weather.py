@@ -49,7 +49,9 @@ def get_weather_by_day(location: str, day=1) -> dict:
     return normal_result
 
 
-def get_text_weather_date(address: str, date_time: str, raw_date_time: str) -> str:
+def get_text_weather_date(
+    address: str, date_time: datetime.date, raw_date_time: str
+) -> str:
     try:
         result = get_weather_by_date(address, date_time)
     except (ConnectionError, HTTPError, TooManyRedirects, Timeout) as e:

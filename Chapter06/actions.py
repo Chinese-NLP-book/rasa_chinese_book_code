@@ -1,11 +1,9 @@
 import os
 import json
-import os
-from collections import defaultdict
+
 from typing import Any, Dict, List, Text
 
-from rasa_sdk import Action, Tracker, utils
-from rasa_sdk.events import SlotSet
+from rasa_sdk import utils
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
 from rasa_sdk.knowledge_base.storage import InMemoryKnowledgeBase
@@ -32,7 +30,9 @@ class MyKnowledgeBaseAction(ActionQueryKnowledgeBase):
     def __init__(self):
         if USE_NEO4J:
             print("using Neo4jKnowledgeBase")
-            knowledge_base = Neo4jKnowledgeBase("bolt://localhost:7687", "neo4j", "43215678")
+            knowledge_base = Neo4jKnowledgeBase(
+                "bolt://localhost:7687", "neo4j", "43215678"
+            )
         else:
             print("using InMemoryKnowledgeBase")
             knowledge_base = InMemoryKnowledgeBase("data.json")
@@ -57,16 +57,10 @@ class MyKnowledgeBaseAction(ActionQueryKnowledgeBase):
         if objects:
             dispatcher.utter_message(text="找到下列{}:".format(self.en_to_zh(object_type)))
 
-            if utils.is_coroutine_action(
-                self.knowledge_base.get_representation_function_of_object
-            ):
-                repr_function = await self.knowledge_base.get_representation_function_of_object(
+            repr_function = await self.knowledge_base.get_representation_function_of_object(
                     object_type
-                )
-            else:
-                repr_function = self.knowledge_base.get_representation_function_of_object(
-                    object_type
-                )
+            )
+
 
             for i, obj in enumerate(objects, 1):
                 dispatcher.utter_message(text=f"{i}: {repr_function(obj)}")

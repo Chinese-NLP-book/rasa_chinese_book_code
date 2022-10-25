@@ -5,3 +5,4 @@ tensorboard_log/*
 __pycache__
 .idea/
 .rasa
+log/

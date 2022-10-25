@@ -3,7 +3,8 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Tracker, Action
 from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.forms import FormAction, REQUESTED_SLOT
+from rasa.core.actions.forms import FormAction
+from rasa_sdk.forms import REQUESTED_SLOT
 
 
 class TicketFormAction(FormAction):
@@ -29,11 +30,11 @@ class TicketFormAction(FormAction):
         return {
             "city_depart": [
                 self.from_entity(entity="city", role="departure"),
-                self.from_entity(entity="city", intent="info_city")
+                self.from_entity(entity="city", intent="info_city"),
             ],
             "city_arrive": [
                 self.from_entity(entity="city", role="destination"),
-                self.from_entity(entity="city", intent="info_city")
+                self.from_entity(entity="city", intent="info_city"),
             ],
         }
 
@@ -58,8 +59,11 @@ class ActionBuyTicket(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
-        arrive = tracker.get_slot("city_arrive")
+        city_arrive = tracker.get_slot("city_arrive")
+        city_depart = tracker.get_slot("city_depart")
+        date = tracker.get_slot("date")
 
-        api_succeed = arrive == "北京"
 
-        return [SlotSet("api_succeed", api_succeed)]
+        dispatcher.utter_message(f"BOT 动作：购买「{date}」从「{city_depart}」出发到「{city_arrive}」的车票")
+
+        return []

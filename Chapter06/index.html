@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Demo for weather forecast query bot</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div id="webchat" />
+  <script>
+    !(function () {
+      let e = document.createElement("script"),
+        t = document.head || document.getElementsByTagName("head")[0];
+      (e.src = "index.js"),
+        // Replace 1.x.x with the version that you want
+        (e.async = !0),
+        (e.onload = () => {
+          window.WebChat.default(
+            {
+              selector: "#webchat",
+              initPayload: "Hi",
+              interval: 1000, // 1000 ms between each message
+              customData: { "language": "en", "userId": "123" },
+              socketUrl: "http://127.0.0.1:5005",
+              socketPath: "/socket.io/",
+              title: "音乐百科机器人",
+              subtitle: "演示项目",
+              showCloseButton: true,
+              fullScreenMode: false
+            },
+            null
+          );
+        }),
+        t.insertBefore(e, t.firstChild);
+    })();
+  </script>
+</body>
+
+</html>

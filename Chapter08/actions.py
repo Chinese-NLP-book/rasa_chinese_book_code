@@ -1,22 +1,17 @@
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Tracker, Action
-from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.forms import FormAction
 
 from service.weather import get_text_weather_date
 from service.normalization import text_to_date
 
 
-class WeatherFormAction(FormAction):
+class WeatherFormAction(Action):
     def name(self) -> Text:
-        return "weather_form"
+        return "action_weather_form_submit"
 
-    def required_slots(self, tracker: Tracker) -> List[Text]:
-        return ["address", "date-time"]
-
-    def submit(
+    def run(
         self, dispatch: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
     ) -> List[Dict]:
         city = tracker.get_slot("address")

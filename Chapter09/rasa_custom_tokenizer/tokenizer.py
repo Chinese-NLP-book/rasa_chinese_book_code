@@ -44,12 +44,15 @@ class MicroTokenizer(Tokenizer):
         }
 
     def __init__(
-        self, config: Dict[Text, Any], model_storage: ModelStorage, resource: Resource,
+        self,
+        config: Dict[Text, Any],
+        model_storage: ModelStorage,
+        resource: Resource,
     ) -> None:
         super().__init__(config)
         self._model_storage = model_storage
         self._resource = resource
-    
+
     @classmethod
     def create(
         cls,

@@ -1,4 +1,3 @@
-import json
 from collections import defaultdict
 from typing import Any, Dict, List, Text
 
@@ -57,7 +56,9 @@ class Neo4jKnowledgeBase(KnowledgeBase):
             object_type=object_type
         )
         print(query)
-        result = tx.run(query,)
+        result = tx.run(
+            query,
+        )
 
         record = result.single()
 
@@ -126,14 +127,15 @@ class Neo4jKnowledgeBase(KnowledgeBase):
                 limit=limit,
             )
             print(query)
-            result = tx.run(query,)
+            result = tx.run(
+                query,
+            )
 
             return [dict(record["o"].items()) for record in result]
         else:
             basic_query = "MATCH (o:{object_type} {attrs})".format(
                 object_type=object_type,
                 attrs=_dict_to_cypher(attributions),
-                limit=limit,
             )
             sub_queries = []
             for k, v in relations.items():
@@ -148,7 +150,9 @@ class Neo4jKnowledgeBase(KnowledgeBase):
             )
 
             print(query)
-            result = tx.run(query,)
+            result = tx.run(
+                query,
+            )
 
             return [dict(record["o"].items()) for record in result]
 
@@ -161,7 +165,14 @@ class Neo4jKnowledgeBase(KnowledgeBase):
         representation_attribute: Text,
         relation: Dict[Text, Text],
     ):
-        print("<_do_get_object>: ", object_type, object_identifier, key_attribute, representation_attribute, relation)
+        print(
+            "<_do_get_object>: ",
+            object_type,
+            object_identifier,
+            key_attribute,
+            representation_attribute,
+            relation,
+        )
         # preprocess attr value
         if object_identifier.isdigit():
             object_identifier = int(object_identifier)
@@ -173,7 +184,9 @@ class Neo4jKnowledgeBase(KnowledgeBase):
             object_type=object_type, key=key_attribute, value=object_identifier
         )
         print(query)
-        result = tx.run(query,)
+        result = tx.run(
+            query,
+        )
         record = result.single()
 
         if record:
@@ -187,7 +200,9 @@ class Neo4jKnowledgeBase(KnowledgeBase):
                 value=object_identifier,
             )
             print(query)
-            result = tx.run(query,)
+            result = tx.run(
+                query,
+            )
             record = result.single()
             if record:
                 attr_dict = dict(record[0].items())

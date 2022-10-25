@@ -4,3 +4,7 @@ rules:
     steps:
       - intent: nlu_fallback
       - action: action_default_fallback
+  - rule: 处理知识图谱查询
+    steps:
+      - intent: query_knowledge_base
+      - action: action_response_query

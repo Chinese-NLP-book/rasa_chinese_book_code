@@ -22,16 +22,12 @@ slots:
     mappings:
       - entity: address
         type: from_entity
-        conditions:
-          - active_loop: weather_form
   date-time:
     type: text
     influence_conversation: false
     mappings:
       - entity: date-time
         type: from_entity
-        conditions:
-          - active_loop: weather_form
 responses:
   utter_greet:
     - text: 你好，请说出需要提供天气预测服务的地点和时间

@@ -29,13 +29,27 @@ clean_models:
 
 .PHONY: clean
 clean:
-    ## remove Python file artifacts
+	# remove Python file artifacts
 	find . -name '*.pyc' -exec rm -f {} +
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*~' -exec rm -f {} +
 	find . -name '__pycache__' -exec rm -fr {} +
-	## remove test and coverage artifacts
+	# remove test and coverage artifacts
 	rm -fr .tox/
 	rm -f .coverage
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
+
+.PHONY: dev
+dev:
+	npm install -g markdownlint-cli
+	pip install black
+	pip install flake8
+	npm i -g @lint-md/cli
+
+.PHONY: dev_check
+dev_check:
+	flake8 --ignore=E501 Chapter0*
+	black --check Chapter0*
+	markdownlint --disable MD013 MD034 MD024 -- README.md **/README.md
+	lint-md -f */README.md
