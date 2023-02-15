@@ -1,5 +1,9 @@
 version: "3.0"
 rules:
+  - rule: chichat
+    steps:
+      - intent: chitchat
+      - action: utter_chitchat
   - rule: activate weather form
     steps:
       - intent: weather

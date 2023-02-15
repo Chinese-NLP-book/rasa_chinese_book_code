@@ -8,10 +8,10 @@ stories:
     steps:
       - intent: goodbye
       - action: utter_goodbye
-  - story: chitchat
-    steps:
-      - intent: chitchat
-      - action: respond_chitchat
+  # - story: chitchat
+  #   steps:
+  #     - intent: chitchat
+  #     - action: respond_chitchat
   - story: form with stop then deny
     steps:
       - or:
